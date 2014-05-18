@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 #Webserver initialization
+service apache2 stop || true
+
 SITE_NAME=aurea-nebula.adversary.us
 SOURCE_BUCKET=aurea-nebula
 aws s3 cp s3://$SOURCE_BUCKET/aws-meta/working-files/create-keys.sh .

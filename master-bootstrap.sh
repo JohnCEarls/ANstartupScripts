@@ -2,7 +2,16 @@
 set -x
 
 HOME_DIR=/home/sgeadmin
-BRANCH=master
+
+thisfile=`basename $0`
+
+if test "${thisfile#*dev}" = "$thisfile"; then
+    BRANCH=master
+else
+    BRANCH=develop
+fi
+
+echo $BRANCH
 
 cd $HOME_DIR
 

@@ -7,7 +7,15 @@ cd $HOME_DIR
 
 rm -rf $HOME_DIR/.local/lib || true
 
-BRANCH=master
+thisfile=`basename $0`
+
+if test "${thisfile#*dev}" = "$thisfile"; then
+    BRANCH=master
+else
+    BRANCH=develop
+fi
+
+echo $BRANCH
 
 GITHUB_REPO=gh:JohnCEarls/DataDirac.git
 DEST_DIR=~/DataDirac

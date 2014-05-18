@@ -3,8 +3,16 @@ set -x
 #Webserver initialization
 service apache2 stop || true
 
-SITE_NAME=aurea-nebula.adversary.us
 SOURCE_BUCKET=aurea-nebula
+thisfile=`basename $0`
+
+if test "${thisfile#*dev}" = "$thisfile"; then
+    SITE_NAME=aurea-nebula.adversary.us
+else
+    SITE_NAME=aurea-nebula-dev.adversary.us
+fi
+
+echo $BRANCH
 aws s3 cp s3://$SOURCE_BUCKET/aws-meta/working-files/create-keys.sh .
 #create ssl keys
 bash create-keys.sh $SITE_NAME
@@ -19,4 +27,8 @@ chown -R sgeadmin /var/log/apache2
 python /home/sgeadmin/bin/elastic_ip.py $SITE_NAME
 
 service apache2 start || true
+
+#give the network settings time to propagate
+sleep 60
+
 service apache2 reload || true

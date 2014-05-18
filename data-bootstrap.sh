@@ -2,8 +2,15 @@
 set -x
 
 HOME_DIR=/home/sgeadmin
+thisfile=`basename $0`
 
-BRANCH=master
+if test "${thisfile#*dev}" = "$thisfile"; then
+    BRANCH=master
+else
+    BRANCH=develop
+fi
+
+echo $BRANCH
 
 GITHUB_REPO=gh:JohnCEarls/MasterDirac.git
 DEST_DIR=~/MasterDirac

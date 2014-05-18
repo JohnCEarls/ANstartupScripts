@@ -22,7 +22,6 @@ python setup.py install --user
 cp scripts/post-commit .git/hooks
 chmod u+x .git/hooks/post-commit
 
-
 GITHUB_REPO=gh:JohnCEarls/MasterDirac.git
 DEST_DIR=~/MasterDirac
 cp scripts/post-commit .git/hooks

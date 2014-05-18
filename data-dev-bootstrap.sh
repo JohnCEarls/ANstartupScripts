@@ -3,7 +3,7 @@ set -x
 
 HOME_DIR=/home/sgeadmin
 
-BRANCH=master
+BRANCH=develop
 
 GITHUB_REPO=gh:JohnCEarls/MasterDirac.git
 DEST_DIR=~/MasterDirac

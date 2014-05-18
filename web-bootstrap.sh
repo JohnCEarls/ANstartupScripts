@@ -15,7 +15,7 @@ DEST_DIR=~/DataDirac
 rm -rf $DEST_DIR || true
 git clone $GITHUB_REPO $DEST_DIR
 cd $DEST_DIR
-git fetch
+git fetch --all
 git checkout $BRANCH
 git pull
 python setup.py install --user
@@ -26,7 +26,7 @@ GITHUB_REPO=gh:JohnCEarls/data-bin.git
 
 git clone $GITHUB_REPO ~/bin
 cd ~/bin
-git fetch
+git fetch --all
 git checkout $BRANCH
 git pull
 chmod u+x ~/bin/elastic_ip.py
@@ -40,7 +40,7 @@ chmod u+x .git/hooks/post-commit
 rm -rf $DEST_DIR || true
 git clone $GITHUB_REPO $DEST_DIR
 cd $DEST_DIR
-git fetch
+git fetch --all
 git checkout $BRANCH
 git pull
 python setup.py install --user
@@ -85,17 +85,3 @@ cd $DEST_DIR
 git fetch
 git pull
 git checkout $BRANCH
-
-GITHUB_REPO=gh:JohnCEarls/PynamoDB.git
-BRANCH=master
-DEST_DIR=~/PynamoDB
-
-rm -rf $DEST_DIR || true
-git clone $GITHUB_REPO $DEST_DIR
-cd $DEST_DIR
-git fetch
-git checkout $BRANCH
-git pull
-python setup.py install --user --verbose || true
-cp scripts/post-commit .git/hooks
-chmod u+x .git/hooks/post-commit

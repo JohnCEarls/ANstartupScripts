@@ -32,3 +32,17 @@ git pull
 cp .vimrc .bashrc  ../
 git clone https://github.com/gmarik/vundle.git $HOME_DIR/.vim/bundle/vundle
 echo | vim +BundleInstall +qall
+
+GITHUB_REPO=gh:JohnCEarls/PynamoDB.git
+BRANCH=master
+DEST_DIR=~/PynamoDB
+
+rm -rf $DEST_DIR || true
+git clone $GITHUB_REPO $DEST_DIR
+cd $DEST_DIR
+git fetch
+git checkout $BRANCH
+git pull
+python setup.py install --user --verbose || true
+cp scripts/post-commit .git/hooks
+chmod u+x .git/hooks/post-commit

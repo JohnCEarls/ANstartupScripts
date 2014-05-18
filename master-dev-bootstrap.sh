@@ -2,7 +2,7 @@
 set -x
 
 HOME_DIR=/home/sgeadmin
-BRANCH=master
+BRANCH=develop
 
 cd $HOME_DIR
 

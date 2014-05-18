@@ -37,7 +37,8 @@ openssl rsa -in $domain.key -passin pass:$password -out $domain.key
 echo "Creating CSR"
 openssl req -new -key $domain.key -out $domain.csr -passin pass:$password \
     -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
- 
+
+openssl x509 -req -days 365 -in $domain.csr -signkey $domain.key -out $domain.crt
 echo "---------------------------"
 echo "-----Below is your CSR-----"
 echo "---------------------------"

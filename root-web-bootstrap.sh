@@ -6,7 +6,7 @@ SOURCE_BUCKET=aurea-nebula
 aws s3 cp s3://$SOURCE_BUCKET/aws-meta/working-files/create-keys.sh .
 #create ssl keys
 bash create-keys.sh $SITE_NAME
-cp $SITE_NAME.csr /etc/apache2/ssl/
+cp $SITE_NAME.crt /etc/apache2/ssl/
 cp $SITE_NAME.key /etc/apache2/ssl/
 
 a2enmod ssl

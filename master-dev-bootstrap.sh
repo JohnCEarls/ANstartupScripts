@@ -15,8 +15,6 @@ echo $BRANCH
 
 cd $HOME_DIR
 
-rm -rf $HOME_DIR/.local/lib || true
-
 GITHUB_REPO=gh:JohnCEarls/DataDirac.git
 DEST_DIR=~/DataDirac
 

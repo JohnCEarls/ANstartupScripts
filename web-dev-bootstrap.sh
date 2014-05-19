@@ -5,8 +5,6 @@ HOME_DIR=/home/sgeadmin
 
 cd $HOME_DIR
 
-rm -rf $HOME_DIR/.local/lib || true
-
 thisfile=`basename $0`
 
 if test "${thisfile#*dev}" = "$thisfile"; then

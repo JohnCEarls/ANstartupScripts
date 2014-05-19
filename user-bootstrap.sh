@@ -46,3 +46,5 @@ git pull
 python setup.py install --user --verbose || true
 cp scripts/post-commit .git/hooks
 chmod u+x .git/hooks/post-commit
+
+pip install git-python --user

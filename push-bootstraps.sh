@@ -19,8 +19,13 @@ aws s3 cp web-dev-bootstrap.sh  s3://aurea-nebula/aws-meta/working-files/web-dev
 aws s3 cp root-web-bootstrap.sh  s3://aurea-nebula/aws-meta/working-files/root-web-bootstrap.sh 
 cp root-web-bootstrap.sh root-web-dev-bootstrap.sh
 aws s3 cp root-web-dev-bootstrap.sh  s3://aurea-nebula/aws-meta/working-files/root-web-dev-bootstrap.sh 
+
 aws s3 cp gpu-bootstrap.sh s3://aurea-nebula/aws-meta/working-files/gpu-bootstrap.sh 
 cp gpu-bootstrap.sh gpu-dev-bootstrap.sh
 aws s3 cp gpu-dev-bootstrap.sh s3://aurea-nebula/aws-meta/working-files/gpu-dev-bootstrap.sh 
+
+aws s3 cp snapr-bootstrap.sh s3://aurea-nebula/aws-meta/working-files/snapr-bootstrap.sh 
+cp snapr-bootstrap.sh snapr-dev-bootstrap.sh
+aws s3 cp snapr-dev-bootstrap.sh s3://aurea-nebula/aws-meta/working-files/snapr-dev-bootstrap.sh 
 
 aws s3 cp create-keys.sh s3://aurea-nebula/aws-meta/working-files/create-keys.sh 

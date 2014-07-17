@@ -76,3 +76,5 @@ git fetch
 git pull
 git checkout $BRANCH
 
+~/MasterDirac/scripts/masterdirac-logserver-daemon.sh start
+~/MasterDirac/scripts/masterdirac-daemon.sh start

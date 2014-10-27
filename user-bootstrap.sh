@@ -21,7 +21,7 @@ cat $HOME_DIR.ssh/authorized_keys.bak >> $HOME_DIR.ssh/authorized_keys
 
 source .bashrc
 rm -rf  $HOME_DIR/$META_TARGZ 
-git clone gh:JohnCEarls/private-settings.git $HOME_DIR/private-settings
+git clone gh:PriceLab/private-settings.git $HOME_DIR/private-settings
 
 #set up vim
 cd $HOME_DIR/private-settings

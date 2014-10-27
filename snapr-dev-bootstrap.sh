@@ -26,6 +26,18 @@ make -j
 cp $DEST_DIR/snapr $HOME_DIR/.local/bin
 
 
+GITHUB_REPO=gh:JohnCEarls/AN-snapr.git
+DEST_DIR=~/AN-snapr
+
+git clone $GITHUB_REPO $DEST_DIR
+cd $DEST_DIR
+git fetch
+git checkout $BRANCH
+git pull
+python setup.py install --user
+cp scripts/post-commit .git/hooks
+chmod u+x .git/hooks/post-commit
+
 GITHUB_REPO=gh:JohnCEarls/DataDirac.git
 DEST_DIR=~/DataDirac
 

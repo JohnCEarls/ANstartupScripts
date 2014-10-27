@@ -14,18 +14,6 @@ echo $BRANCH
 
 cd $HOME_DIR
 
-$SNAPR_BRANCH=master
-GITHUB_REPO=gh:PriceLab/snapr.git
-DEST_DIR=~/snapr
-git clone $GITHUB_REPO $DEST_DIR
-cd $DEST_DIR
-git fetch
-git checkout $SNAPR_BRANCH
-git pull
-make -j
-cp $DEST_DIR/snapr $HOME_DIR/.local/bin
-
-
 GITHUB_REPO=gh:JohnCEarls/AN-snapr.git
 DEST_DIR=~/AN-snapr
 
@@ -37,6 +25,19 @@ git pull
 python setup.py install --user
 cp scripts/post-commit .git/hooks
 chmod u+x .git/hooks/post-commit
+
+$SNAPR_BRANCH=master
+GITHUB_REPO=gh:PriceLab/snapr.git
+DEST_DIR=~/snapr
+git clone $GITHUB_REPO $DEST_DIR
+cd $DEST_DIR
+git fetch
+git checkout $SNAPR_BRANCH
+git pull
+make -j
+cp $DEST_DIR/snapr $HOME_DIR/.local/bin/snapr
+
+
 
 GITHUB_REPO=gh:JohnCEarls/DataDirac.git
 DEST_DIR=~/DataDirac
